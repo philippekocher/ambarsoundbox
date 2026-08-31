@@ -1,0 +1,50 @@
+:root {
+  --offset: 187;
+  --duration: 1.4s;
+}
+
+.loading {
+  position: absolute;
+  left: calc(50% - 33px);
+  top: calc(50% - 33px);
+  background: white;
+}
+
+.loading .spinner {
+  position: absolute;
+  animation: rotator var(--duration) linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.loading .path {
+  stroke: #ddd;
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash var(--duration) ease-in-out infinite;
+}
+
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  100% { stroke: #4285F4; }
+}
+
+@keyframes dash {
+  0% { stroke-dashoffset: var(--offset); }
+  50% {
+    stroke-dashoffset: calc(var(--offset)/4);
+    transform:rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: var(--offset);
+    transform:rotate(450deg);
+ }
+}

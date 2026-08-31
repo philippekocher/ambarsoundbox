@@ -1,0 +1,55 @@
+/* ---------------------------------------------
+module context menu
+------------------------------------------------*/
+
+.moduleContextMenu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+  top: -999px;
+  border-radius: 0 10px 10px 10px;
+  background: #323232;
+}
+
+.moduleContextMenu.left {
+  border-radius: 10px 0 10px 10px;
+}
+
+.moduleContextMenu > div {
+  display: flex;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  font-style: normal;
+  text-align: left;
+  padding: 10px 20px 10px 0;
+  cursor: pointer;
+}
+
+.moduleContextMenu button {
+  padding: 10px 0 10px 50px;
+  border-bottom: 1px solid rgba(245,245,245,0.2);
+}
+
+.moduleContextMenu button:last-of-type {
+  border-bottom: none;
+}
+
+.moduleContextMenu button#delete {
+  mask-image: var(--icon-delete);
+  mask-repeat: no-repeat;
+  mask-position: 12px center;
+  background-color: white;
+}
+
+.moduleContextMenu button#duplicate {
+  mask-image: var(--icon-duplicate);
+  mask-repeat: no-repeat;
+  mask-position: 12px center;
+  background-color: white;
+}
+
+.moduleContextMenu button#attributes {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 20" fill="white"><path d="M0 3.2252V1.0752H4.22256V3.2252H0ZM6.4596 3.2252V1.0752H21.5302V3.2252H6.4596ZM0 10.7556V8.60557H14.9261V10.7556H0ZM17.4521 10.7556V8.60557H21.5248V10.7556H17.4521ZM0 18.286V16.136H9.64391V18.286H0ZM11.9826 18.286V16.136H21.5248V18.286H11.9826Z" /><path d="M5.37895 4.30002C6.56714 4.30002 7.53037 3.33744 7.53037 2.15002C7.53037 0.962602 6.56714 0 5.37895 0C4.19075 0 3.22754 0.962602 3.22754 2.15002C3.22754 3.33744 4.19075 4.30002 5.37895 4.30002Z" /><path d="M16.1465 11.8303C17.3347 11.8303 18.2979 10.8677 18.2979 9.68029C18.2979 8.49288 17.3347 7.53027 16.1465 7.53027C14.9583 7.53027 13.9951 8.49288 13.9951 9.68029C13.9951 10.8677 14.9583 11.8303 16.1465 11.8303Z" /><path d="M10.7627 15.0552C11.9508 15.0552 12.9141 16.0179 12.9141 17.2052C12.9141 18.3925 11.9508 19.3552 10.7627 19.3552C9.57463 19.3552 8.61133 18.3925 8.61133 17.2052C8.61133 16.0179 9.57463 15.0552 10.7627 15.0552Z" /></svg>') no-repeat 12px center;
+}

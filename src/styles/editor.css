@@ -1,0 +1,287 @@
+/* ---------------------------------------------
+editor + modules
+------------------------------------------------*/
+
+.editor {
+  overflow: scroll;
+}
+
+.editor > svg {
+	position: absolute;
+}
+
+ .editor.build {
+ 	position: absolute;
+ 	height: 100%;
+ 	width: 100%;
+}
+
+.module, .comment {
+  position: absolute;
+	touch-action: none;
+	z-index: 0;
+}
+
+.module { min-width: 90px; }
+
+.moduleHeader {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  white-space: nowrap;
+  margin: 0 10px 0 10px;
+  padding: 0 16px 0 20px;
+  height: 30px;
+  border-radius: 15px;
+  color: #fff;
+  background: var(--category_color);
+	cursor: move;
+}
+
+.moduleHeader > div:first-child {
+  padding: 6px 0 6px 0;
+  text-align: center;
+  font-style: normal;
+  font-weight: 580;
+  line-height: normal;
+}
+
+.comment { min-width: 150px; }
+
+.module.selected, .comment.selected {
+  z-index: 5;
+}
+
+.comment > .moduleHeader {
+  color: #fff0;
+  background: none;
+}
+
+.comment.selected > .moduleHeader {
+  background: var(--category_color);
+  color: #fff;
+	cursor: move;
+}
+
+.comment > .body {
+  margin: -26px 10px 0 10px;
+  padding-top: 20px;
+  border-radius: 10px;
+	background: #fff0;
+	border: 4px solid #0000;
+}
+
+.comment.selected > .body {
+  background-color: #fff;
+}
+
+.comment .textarea {
+	pointer-events: none;
+  display: block;
+  overflow: hidden;
+  resize: none;
+  min-height: 40px;
+  line-height: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+	background-image: url("data:image/svg+xml,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' fill='none' rx='10' ry='10' stroke='%23323232' stroke-width='2' stroke-dasharray='3,7' stroke-dashoffset='0' stroke-linecap='square'/></svg>");
+}
+
+.comment.selected .textarea {
+  background-image: none;
+	pointer-events: auto;
+}
+
+.comment .textarea:focus {
+  outline: none !important;
+}
+
+.module.dummy {
+  opacity: 0.4;
+}
+
+.module.dummy > .body {
+  height: 100px;
+}
+
+.ctxMenuBtn {
+  visibility: hidden;
+  display: inline-block;
+  margin: 6px 0 0 0;
+  overflow: visible;
+  cursor: pointer;
+  width: 4px;
+  height: 16px;
+  background: url('data:image/svg+xml,<svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g><circle id="Ellipse 235" cx="1.72222" cy="1.72234" r="1.72222" fill="white"/><circle id="Ellipse 236" cx="1.72222" cy="7.75018" r="1.72222" fill="white"/><circle id="Ellipse 237" cx="1.72222" cy="13.778" r="1.72222" fill="white"/></g></svg>') no-repeat center;
+}
+
+.comment .ctxMenuBtn {
+  display: none;
+}
+
+.comment.selected .ctxMenuBtn {
+  visibility: visible;
+  display: inline-block;
+}
+
+.module > .body {
+  margin: -26px 10px 0 10px;
+  padding-top: 25px;
+  border-radius: 15px;
+	border: 4px solid #0000;
+	background: #e5e5ea;
+}
+
+.module > .body.vis {
+	background: url('data:image/svg+xml,<svg height="200" width="1" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="0" x2="0" y2="90" style="stroke:%23f2f2f2;stroke-width:2"/><line x1="0" y1="90" x2="0" y2="200" style="stroke:%23e5e5ea;stroke-width:2" /></svg>') repeat;
+}
+
+.selected > .body {
+	border: 4px solid var(--category_color);
+}
+
+.inlet, .outlet {
+	position: absolute;
+	width: 10px;
+	height: 20px;
+  background: var(--Grays-Gray-5, #E5E5EA);
+}
+
+.inlet { left: 0px; }
+.outlet { bottom: 15px; right: 0px; }
+.ctrInlet {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 10px;
+  background: var(--category_color);
+}
+
+.inlet.magnetic, .ctrInlet.magnetic {
+  box-shadow: 0 0 10px 3px var(--category_color);
+  filter: brightness(80%);
+}
+
+.inlet.error, .ctrInlet.error {
+  box-shadow: 0 0 10px 3px var(--error);
+  background: var(--error);
+}
+
+.controller_container {
+  margin: 0 4px;
+  min-height: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controller_container.vertical {
+/*   margin: 0 4px 4px 4px; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.editor.build .controller_container > * {
+  margin: 8px 0 8px 0;
+  width: 80px;
+  text-align: center;
+}
+
+.editor.build .controller_container.vertical > * {
+  min-height: 36px;
+  margin: 4px auto;
+  align-content: center;
+}
+
+.visualisation_container {
+  margin: 0 -4px 0 -4px;
+  height: 63px;
+  overflow: hidden;
+}
+
+.module.selected .visualisation_container {
+}
+
+.module .label {
+  text-align: center;
+  padding: 0 5px;
+}
+
+.module.selected .ctxMenuBtn {
+  visibility: visible;
+}
+
+.extensionButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.extensionButtons > button {
+  font-size: 1.5em;
+  border: none;
+  border-radius: 100%;
+  margin: 0 2px 4px 2px;
+  width: 16px;
+  height: 16px;
+  line-height: 5px;
+}
+
+.extensionButtons > button.minus {
+  background: url('data:image/svg+xml,<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="black" stroke-width="1"/><line x1="4" y1="8" x2="12" y2="8" stroke="black" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/></svg>')
+}
+
+.extensionButtons > button.plus {
+  background: url('data:image/svg+xml,<svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" fill="none" stroke="black" stroke-width="1"/><line x1="8" y1="4" x2="8" y2="12" stroke="black" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="8" x2="12" y2="8" stroke="black" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/></svg>')
+}
+
+/* subpatch */
+.openSubpatch {
+  max-width: 30px;
+  height: 30px;
+  margin-top: 2px;
+  border: 1px solid black;
+  border-radius: 20%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none"><path d="M16.7939 2.15002H13.9895V0H20.4545V6.46073H18.3031V3.68497L13.358 8.60537L11.8381 7.08112L16.7939 2.15534V2.15002ZM16.7778 18.2911L11.8381 13.3546L13.358 11.8358L18.3031 16.7829V13.9857H20.4545V20.4465H13.9842V18.2965H16.7725L16.7778 18.2911ZM2.15677 16.7722L7.08576 11.8304L8.61101 13.3493L3.68203 18.2911H6.4703V20.4411H0V13.9804H2.15142V16.7722H2.15677Z" fill="%232E2F30"/><path d="M2.15727 3.66356V6.46073H0.00585938V0H6.42264V2.15002H3.68788L8.61687 7.08647L7.09161 8.60537L2.15727 3.66356Z" fill="%232E2F30"/></svg>') center no-repeat;
+}
+
+.closeBtn {
+  display: inline-block;
+  margin: 5px 0 0 10px;
+  overflow: visible;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml,<svg width="20" height="20" fill="none" stroke="white" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" fill="none" stroke="white" stroke-width="1"/><line x1="6" y1="6" x2="14" y2="14" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="14" x2="14" y2="6" stroke-width="2" stroke-linecap="round"/></svg>') no-repeat center;
+}
+
+
+/* ---------------------------------------------
+patch cords
+------------------------------------------------*/
+
+svg .patchCord {
+  stroke: var(--midGrey);
+}
+
+svg .selected {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+/* ---------------------------------------------
+selection rectangle
+------------------------------------------------*/
+
+.editor.build .selectionRect {
+  fill: #0000ff06;
+  stroke: #0000ff;
+  stroke-width: 1;
+}
+
+#layoutEditor .selectionRect {
+  fill: #fff2;
+  stroke: #fffa;
+  stroke-width: 1;
+}
