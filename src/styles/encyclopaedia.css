@@ -1,0 +1,55 @@
+.encyclopaedia {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.encyclopaedia .column {
+  min-width: 200px;
+  max-width: 800px;
+  width: calc(50% - 10px);
+}
+
+.encyclopaedia .column:first-child {
+  padding-right: 20px;
+}
+
+.encyclopaedia .letter {
+  margin: 5px 0 15px 0;
+}
+
+.encyclopaedia .entries {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.encyclopaedia .entries > div {
+  padding: 0 0 10px 0;
+  display: flex;
+}
+
+.encyclopaedia .entries .bull {
+  padding: 0 16px;
+}
+
+.encyclopaedia h3 {
+  color: var(--soundbox_main);
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+#gotoToc {
+  margin-bottom: 1em;
+}
+
+synth {
+  display: none;
+}
+
+div.synth {
+  position: relative;
+  min-height: 300px;
+  border: 1px solid black;
+  margin: 20px 0;
+  overflow: scroll;
+}

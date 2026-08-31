@@ -1,0 +1,45 @@
+.settingItem { 
+  display: flex; 
+  align-items: center; 
+  min-height: 50px;
+  padding: 10px 0;
+}
+
+/* multi-state switch */
+div.switch {
+  display: flex;
+  margin-right: 20px;
+  user-select: none;
+}
+div.switch > div {
+  padding: 2px 10px 2px 10px;
+  width: 50px;
+  border: 1px solid black;
+  border-left: none;
+  text-align: center;
+  background: white;
+  color: black;
+  font-weight: 400;
+  cursor: pointer;
+}
+div.switch > div:first-child {
+  border-left: 1px solid black;
+  border-radius: 5px 0 0 5px;
+}
+div.switch > div:last-child {
+  border-radius: 0 5px 5px 0;
+}
+div.switch > div.selected {
+  background: black;
+  color: white;
+  font-weight: 800;
+}
+
+.settings button { 
+  border: 1px solid black; 
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 2px 5px 2px 5px; 
+  font-size: 1em;
+  width: 100px;
+}

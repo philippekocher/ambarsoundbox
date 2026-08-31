@@ -1,0 +1,29 @@
+{
+  "name": "ambar",
+  "version": "0.3.0",
+  "description": "A browser-based sound and music playground",
+  "type": "module",
+  "scripts": {
+    "prebuild": "node ./src/build-scripts/build-css.js && node ./src/build-scripts/build-encyclopaedia.js && node ./src/build-scripts/build-modules.js && node ./src/build-scripts/build-examples.js && node ./src/build-scripts/build-language.js",
+    "build": "npm run prebuild && node ./build.js",
+    "dev": "npm run prebuild && node ./build.js --watch",
+    "start": "npm run prebuild && node ./build.js --watch --serve"
+  },
+  "author": "Philippe Kocher",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philippekocher/ambarsoundbox.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "file-saver": "^2.0.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.9"
+  }
+}

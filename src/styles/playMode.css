@@ -1,0 +1,69 @@
+/* ---------------------------------------------
+play + layout mode
+------------------------------------------------*/
+
+:root {
+  --playModeUnitWidth: 120px;
+}
+
+#playEditor, #layoutEditor {
+  position: absolute;
+  background: var(--soundbox_main);
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+#playEditor .module .body, #layoutEditor .module .body {
+  margin-top: 0;
+  padding-top: 0;
+  background: #fff0;
+	outline: 1px solid #fff;
+}
+
+#layoutEditor .module .body {
+	outline: 2px solid #fff;
+}
+
+#playEditor .width1 .body, #layoutEditor .width1 .body {
+  width: calc(var(--playModeUnitWidth) - 12px);
+}
+
+#playEditor .width2 .body, #layoutEditor .width2 .body {
+  width: calc(2 * var(--playModeUnitWidth) - 12px);
+}
+
+#playEditor .height1 .body, #layoutEditor .height1 .body {
+  height: calc(var(--playModeUnitWidth) - 12px);
+}
+
+#playEditor .height2 .body, #layoutEditor .height2 .body {
+  height: calc(2 * var(--playModeUnitWidth) - 12px);
+}
+
+#playEditor .label, #layoutEditor .label {
+  position: relative;
+  height: 1.2em;
+  top: 0em;
+}
+
+#playEditor .controller_container > *,
+#layoutEditor .controller_container > * {
+  margin: 8px 0 6px 0;
+  width: 80px;
+  text-align: center;
+}
+
+#playEditor .controller_container > *[type="number"],
+#layoutEditor .controller_container > *[type="number"] {
+  height: 17px;
+}
+
+#playEditor .text,
+#layoutEditor .text {
+  padding: 0 10px;
+}
+
+#playEditor .module .comm {
+  outline: none;
+}

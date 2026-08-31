@@ -1,0 +1,116 @@
+#mask {
+  position: fixed;
+  left:0;
+  top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 200, 200, 0.40);
+	backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+}
+
+#mask.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalWindow {
+  position: fixed;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 40px 0 rgba(0, 0, 0, 0.5);
+	background-color: #fff;
+  overflow: visible;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 0.1s ease-out;
+  pointer-events: none;
+}
+
+.modalWindow#dialogBox {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modalWindow.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalWindow .item {
+	padding: 8px 20px 2px 20px;
+}
+
+.modalWindow .item:first-of-type {
+  margin-top: 1em;
+  border-top: none;
+}
+
+.modalWindow .item.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 1.8em 0 0.8em 0;
+}
+
+.modalWindow .item.buttons:has(> :only-child) {
+  justify-content: flex-end; /* align single item to the right */
+}
+
+.modalWindow .item div {
+  padding-bottom: 0.4em;
+}
+
+.modalWindow button {
+  border: 1px solid black; 
+  border-radius: 7px;
+  padding: 0.4em 0.6em 0.4em 0.6em;
+  font-size: 1em;
+  min-width: 80px;
+}
+
+.modalWindow button.important {
+  background: var(--grey);
+  font-weight: 800;
+}
+
+.modalWindow button#copy {
+  border: none;
+  width: 30px;
+  min-width: 0;
+  margin-left: -32px;
+  background-position: center;
+}
+
+.modalWindow input[type=text] {
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 1.2em;
+  min-width: 260px;
+  padding: 8px 5px;
+}
+
+.modalWindow input[type=text].copied { 
+  background-color: #eee; 
+  color: #aaa;
+}
+
+.modalWindow .sizer {
+  font-family: system-ui;
+  font-size: 1.2em;
+  padding: 8px 5px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.modalWindow .wrapper {
+  display: flex;
+}
+
+.modalWindow select {
+  font-size: 1.2em;
+  width: 100%;
+}
+

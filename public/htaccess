@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+
+# Keep real files and directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /embed/ or /embed/<identifier> -> player.html
+RewriteRule ^embed/[^/]*/?$ player.html [L]
+
+# /<identifier> -> index.html
+# RewriteRule ^[^/]+/?$ index.html [L]
+
+# everything else -> index.html
+RewriteRule ^.*$ /index.html [L]
+
+
+
+# RewriteCond %{REQUEST_URI} ^/embed/
+# RewriteRule ^ - [E=IS_EMBED:1]
+# 
+# Header always unset X-Frame-Options env=IS_EMBED
+# Header always set Content-Security-Policy "frame-ancestors *" env=IS_EMBED

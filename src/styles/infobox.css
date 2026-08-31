@@ -1,0 +1,41 @@
+/* ---------------------------------------------
+info box
+------------------------------------------------*/
+
+#infobox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  bottom: 26px;
+  left: 50vw;
+  translate: -50% 0;
+  width: 90%;
+  max-width: 800px;
+  height: 76px;
+  border-radius: 999px;
+  transition: left 0.5s;
+}
+
+@media (max-width: 500px) {
+  #infobox {
+    font-size: 0.8em;
+  }
+}
+
+#infobox #icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 24px auto 24px;
+  border-radius: 100%;
+  background-color: var(--category_color);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M9.77564 12.2199C9.97141 11.9589 10.7066 11.0584 10.6892 11.0758C11.7769 9.70983 12.2511 8.63966 12.2511 6.9996C12.2511 4.09797 9.9018 1.74881 7 1.74881C4.0982 1.74881 1.74891 4.09797 1.74891 6.9996C1.74891 8.62226 2.21877 9.69243 3.31075 11.0671C3.2803 11.028 4.02859 11.9546 4.22871 12.2156C4.91175 13.1335 5.25109 13.9209 5.25109 14.8736H8.75326C8.75326 13.9166 9.09695 13.1292 9.77999 12.2156L9.77564 12.2199ZM0 6.9996C0 3.1322 3.13238 0 7 0C10.8676 0 14 3.1322 14 6.9996C14 9.09209 13.3735 10.5146 12.0597 12.1677C12.0597 12.1721 11.3462 13.0421 11.1765 13.2684C10.6979 13.9079 10.4978 14.3646 10.4978 14.8736V16.6224H3.50218V14.8736C3.50218 14.3603 3.30205 13.8992 2.82349 13.2597C2.65382 13.0291 1.92728 12.1373 1.94034 12.1503C0.626476 10.4972 0 9.07904 0 6.9996Z" fill="white"/><path d="M3.50293 19.25V17.5012H10.5029V19.25H3.50293Z" fill="white"/></svg>');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#infobox a.more {
+  color: var(--midGrey);
+  border-color: var(--midGrey);
+}

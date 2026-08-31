@@ -1,0 +1,124 @@
+/* ---------------------------------------------
+app shell (header + sidebar + content wrapper)
+present on every non-editor view
+------------------------------------------------*/
+
+#header {
+  position: absolute;
+  height: 82px;
+  width: 100%;
+  background-color: var(--soundbox_main);
+  background-image: url('../assets/logo.png');
+  background-repeat: no-repeat;
+  background-size: 169px;
+  background-position: 10px;
+  padding-right: 20px;
+  text-align: right;
+  align-content: center;
+  color: #fff;
+  z-index: 2;
+}
+
+/* ---------------------------------------------
+menu sidebar
+------------------------------------------------*/
+
+#sidebarBtn {
+  position: absolute;
+  display: none;
+  top: 100px;
+  left: -999px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#sidebarMenu {
+  position: absolute;
+  top: 82px;
+  bottom: 0;
+  width: 186px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-right: solid 1px #eee;
+  transition: transform 0.5s ease;
+  z-index: 20;
+}
+
+@media(max-width: 750px) {
+  #sidebarBtn {
+    left: 18px;
+    display: block;
+  }
+  #sidebarMenu {
+    transform: translateX(-120%);
+  }
+  #sidebarMenu.show {
+    transform: translateX(0);
+  }
+}
+
+#sidebarMenu div {
+  margin-bottom: 20px;
+}
+
+#sidebarMenu #bottom button {
+  color: var(--midGrey);
+  font-size: 1em;
+}
+
+#sidebarMenu button {
+  display: flex;
+  text-align: left;
+  padding: 8px 20px 8px 20px;
+  width: 100%;
+  font-size: 1.2em;
+  font-style: normal;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#sidebarMenu button.selected {
+  color: var(--soundbox_main);
+  background: #0000ff08;
+/*
+  border-right: solid 4px var(--soundbox_main);
+ */
+  cursor: default;
+}
+
+/* ---------------------------------------------
+content wrapper
+used by every view (workspace, examples, encyclopaedia,
+settings, about, legal) - not just one specific page
+------------------------------------------------*/
+
+#content {
+  position: absolute;
+  top: 86px;
+  left: 186px;
+  width: calc(100% - 180px);
+  height: calc(100% - 86px);
+  padding: 20px 28px 0 36px;
+  overflow: scroll;
+}
+
+@media(max-width: 750px) {
+  #content {
+    left: 0;
+    top: 140px;
+    padding-left: 28px;
+    height: calc(100% - 140px);
+    width: 100%;
+  }
+}
+
+#content #top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
+}

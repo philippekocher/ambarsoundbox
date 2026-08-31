@@ -1,0 +1,11 @@
+dist/
+node_modules/
+
+**/*.gen.*
+api/config.php
+
+src/examples/**
+!src/examples/README.md
+src/encyclopaedia/*/
+
+.DS_Store

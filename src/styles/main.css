@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "space grotesk";
+    src: url("../assets/SpaceGrotesk-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: 'chaney';
+    src: url("../assets/chaney-regular-webfont.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	/* prevent two finger swipe navigating forward/back */
+	overscroll-behavior-x: none;
+	/* disable pinch zoom */
+}
+
+body {
+	font-family: "Space Grotesk";
+	font-size: 14px;
+	overflow: hidden;
+}
+
+#player {
+  position: absolute;
+  left: -999px;
+  width: 1px;
+}
+
+/* ---------------------------------------------
+colours
+------------------------------------------------*/
+
+:root {
+  --darkGrey: #323232;
+  --midGrey: #909090;
+  --grey: #e0e0e0;
+  --darkWhite: #f9f9f9;
+  --soundbox_main: #1f2ade;
+  --category_color: #e5e5e5;
+  --category_io: #ff7bac;
+  --category_gen: #1f2ade;
+  --category_proc: #00df82;
+  --category_util: #ac53ff;
+  --category_gui: #006d54;
+  --red: #ff4400;
+  --error: #f00;
+}
+
+.category_io { --category_color: var(--category_io); }
+.category_generator { --category_color: var(--category_gen); }
+.category_processor { --category_color: var(--category_proc); }
+.category_utility { --category_color: var(--category_util); }
+.category_gui { --category_color: var(--category_gui); }
+.category_undefined { --category_color: var(--darkGrey); }
+
+.glassEfx {
+	border: 1px solid #ddd;
+	background: radial-gradient(278.82% 137.51% at 1.95% 3.59%, rgba(240, 240, 240, 0.40) 0%, rgba(255, 255, 255, 0.00) 100%);
+	backdrop-filter: blur(11px);
+	z-index: 10;
+}
+
+button {
+  font-size: 1em;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px dotted #a9a9a9;
+}
+
+a:hover {
+  border-bottom: 1px solid #000;  
+}
+
+p {
+  text-align: justify; 
+  margin-bottom: 20px;
+}
+
+h1 { 
+  font-size: 2.2em;
+  font-weight: 400;
+  padding: 0 50px 20px 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+hr {
+  margin-bottom: 1em;
+  color: var(--midGrey);
+}
+
+ul { 
+  margin-left: 20px;
+}
